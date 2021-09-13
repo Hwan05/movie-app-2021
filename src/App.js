@@ -15,7 +15,22 @@ class App extends React.Component {
     this.setState({count: this.state.count - 1});
   };
 
+  componentDidMount(){ // Component first render
+    console.log("Component rendered");
+  }
+
+  componentDidUpdate() { // Component update, Rerender
+    console.log("Component update");
+  }
+
+  componentWillUnmount() { // render finish
+    console.log("Goodbye");
+  }
+
+
+
   render(){
+    console.log("I'm rendering");
     return (
       <div>
 
