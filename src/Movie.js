@@ -1,16 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./Movie.css";
 
 
 
-function Movie({id,year,title,summary,poster}){
-  return ( <div>
+function Movie({id,year,title,summary,poster,genres}){
+  return (
+    <div className = "movie">
+     <div className = "movie-data">
 
+         <img src = {poster} alt = {title} title = {title} />
+         <h4 className = "movie-title"> {title} </h4>
+         <h5 className = "movie-year"> {year} </h5>
+         <ul className = "genres">
+           {genres.map((genres, index) => ( <li key={index} className = "genres-on"> {genres}</li>
+         ))}
+         <p className = "movie-summary"> {summary} </p>
 
-    <h4> {title} }</h4>
-
-
-
+         </ul>
+     </div>
     </div>
   );
 }
@@ -22,12 +30,14 @@ Movie.propTypes = {
   year : PropTypes.number.isRequired,
   title : PropTypes.string.isRequired,
   summary : PropTypes.string.isRequired,
-  poster : PropTypes.string.isRequired
+  poster : PropTypes.string.isRequired,
+  genres : PropTypes.arrayOf(PropTypes.string).isRequired //배열
 
 
 
 
-}
+
+};
 
 
 export default Movie;
