@@ -8,8 +8,7 @@ function Movie({id,year,title,summary,poster,genres}){
   return (
     <div className = "movie">
      <div className = "movie-data">
-
-         <img src = {poster} alt = {title} title = {title} />
+         <img src = {poster} alt = {title} title = {title} className = "img" />
          <h4 className = "movie-title"> {title} </h4>
          <h5 className = "movie-year"> {year} </h5>
          <ul className = "genres">
