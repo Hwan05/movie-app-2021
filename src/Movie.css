@@ -1,0 +1,32 @@
+
+.movies {
+  background-color: #216e60;
+  display: flex;
+  justify-content: center;
+  items-align: center;
+  flex-wrap: wrap;
+
+}
+
+.movie {
+
+  width: 300px;
+  background-color: white;
+
+}
+.movie .movie-title {
+  font-size: 30px;
+  text-align: center;
+}
+.movie .movie-year {
+  text-align: center;
+}
+
+.movie .img{
+  float: left;
+}
+/*.movie ::after {
+  content:"";
+  clear: both;
+  display: block;
+}*/
