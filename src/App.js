@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Movie from "./Movie";
+import "./App.css";
 // axios 외부 API 호출
 class App extends React.Component {
 
@@ -24,17 +25,26 @@ class App extends React.Component {
     // this.state object 할당
     const { isLoading, movies } = this.state;
     return(
-      <div> {isLoading ? "Loading..." : movies.map( movie => {
-
-        return <Movie
-        key = {movie.id}
-        id={movie.id}
-        year={movie.year}
-        title={movie.title}
-        summary={movie.summary}
-        poster={movie.medium_cover_image} />
-      })}
+      <section className = "container">
+      {isLoading ? (
+        <div className ="loader">
+          <span className = "loader__text">Loading...</span>
+        </div>
+      ) : <div className = "movie">
+        {movies.map(movie => (
+          <Movie
+          key = {movie.id}
+          id = {movie.id}
+          year = {movie.year}
+          title = {movie.title}
+          summary = {movie.summary}
+          poster = {movie.medium_cover_image}
+          genres = {movie.genres}
+          />
+        ))}
       </div>
+    }
+    </section>
     );
   }
 }
