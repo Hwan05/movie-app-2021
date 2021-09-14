@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  background-color: black;
+
+
+}
+
+
+.container{
+  display: flex;
+  justify-content: center;
+}
+
+.loader{
+  background-color: #7A7D98;
+}
+
+.loader__text{
+  font-size: 50px;
+  center: center;
+}
+
+.movies {
+  display: flex;
+  justify-content: space-between;
+}
+
+.movies .button {
+  background-color:blue;
+  height: 90px;
+}
+
+.movies .movie{
+  height: 100%;
+}
