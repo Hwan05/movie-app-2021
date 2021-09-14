@@ -2,7 +2,24 @@ import React from "react";
 import axios from "axios";
 import Movie from "./Movie";
 import "./App.css";
+
+import loading from "./Image/Loadingimg.gif";
 // axios 외부 API 호출
+
+const btnStyle = {
+  color: "white",
+  background: "teal",
+  padding: ".375rem .75rem",
+  border: "1px solid teal",
+  borderRadius: ".25rem",
+  fontSize: "1rem",
+  lineHeight: 1.5,
+};
+
+function Button() {
+  return <div className="button"><button style={btnStyle}>Inline</button></div>;
+}
+
 class App extends React.Component {
 
   state = {
@@ -28,9 +45,12 @@ class App extends React.Component {
       <section className = "container">
       {isLoading ? (
         <div className ="loader">
+          <Button />
+          <img src= {loading} alt = "Loading"/><br/>
           <span className = "loader__text">Loading...</span>
         </div>
-      ) : <div className = "movie">
+      ) : <div className = "movies">
+        <Button/>
         {movies.map(movie => (
           <Movie
           key = {movie.id}
